@@ -14,7 +14,6 @@ class User extends Person {
   }
 
   constructor(model){
-    console.log(model)
     model = model || {};
     super(model);
 
