@@ -25,19 +25,19 @@ describe('user.fullName', function() {
 	});
 });
 
-describe('user.verifiedEmail', function() {
+describe('user.verified', function() {
 	it('should return the given and family names in a single string', function() {
-		assert.equal(user.verifiedEmail, false);
-    user.verifiedEmail = true;
-		assert.equal(user.verifiedEmail, true);
-    user.verifiedEmail = false;
-		assert.equal(user.verifiedEmail, false);
-    user.verifiedEmail = '';
-		assert.equal(user.verifiedEmail, false);
-    user.verifiedEmail = null;
-		assert.equal(user.verifiedEmail, false);
-    user.verifiedEmail = 1;
-		assert.equal(user.verifiedEmail, false);
+		assert.equal(user.verified, false);
+    user.verified = true;
+		assert.equal(user.verified, true);
+    user.verified = false;
+		assert.equal(user.verified, false);
+    user.verified = '';
+		assert.equal(user.verified, false);
+    user.verified = null;
+		assert.equal(user.verified, false);
+    user.verified = 1;
+		assert.equal(user.verified, false);
 	});
 });
 

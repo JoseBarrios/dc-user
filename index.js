@@ -19,21 +19,21 @@ class User extends Person {
     super(model);
 
     this.password = model.password;
-    this.verifiedEmail = model.verifiedEmail;
+    this.verified = model.verified;
   }
 
   get password(){ return this.computed.password; }
   set password(value){ this.computed.password = User.hashPassword(value); }
 
-  get verifiedEmail(){ return this.computed.verifiedEmail; }
-  set verifiedEmail(value){
+  get verified(){ return this.computed.verified; }
+  set verified(value){
     if(User.isBoolean(value)){
-      this.computed.verifiedEmail = value;
-    } else if(!this.computed.verifiedEmail){
+      this.computed.verified = value;
+    } else if(!this.computed.verified){
       //Default to false
-      this.computed.verifiedEmail = false;
-    } else if(User.isEmpty(this.computed.verifiedEmail)){
-      console.error("user's verifiedEmail should be boolean");
+      this.computed.verified = false;
+    } else if(User.isEmpty(this.computed.verified)){
+      console.error("user's verified should be boolean");
     }
   }
 
