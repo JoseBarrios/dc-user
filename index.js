@@ -6,7 +6,7 @@ class User extends Person {
   static hashPassword(value){
     return new Promise((resolve, reject) => {
       bcrypt.hash(value, 10, function(err, hash) {
-        if(err) { reject(error) }
+        if(err) { reject(err) }
         else { resolve(hash) }
       });
     })
