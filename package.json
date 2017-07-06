@@ -1,6 +1,6 @@
 {
   "name": "@josebarrios/user",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Custom user class",
   "main": "index.js",
   "scripts": {
