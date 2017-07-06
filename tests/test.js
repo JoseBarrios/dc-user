@@ -15,7 +15,7 @@ key.email = null;
 
 describe('user.password', function() {
 	it('should hash user password', function() {
-    assert.notEqual(user.password, model.password);
+    assert.equal(user.password, model.password);
 	});
 });
 
@@ -47,9 +47,3 @@ describe('#clean', function() {
 	});
 });
 
-describe('#passwordEquals', function() {
-	it('should return true if unhashed password matches hashed password', function() {
-		assert.equal(user.passwordEquals(model.password), true);
-    assert.equal(user.passwordEquals('should not match'), false);
-	});
-});
