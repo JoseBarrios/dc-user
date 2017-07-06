@@ -16,8 +16,6 @@ class User extends Person {
   set password(value){
     if(User.isString(value) || User.isNumber(value)){
       this.computed.password = value;
-    }else{
-      console.log(`PASSWORD NOT SET:  '${value}' must be string or number`)
     }
   }
 
