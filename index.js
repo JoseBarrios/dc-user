@@ -4,12 +4,7 @@ const bcrypt = require('bcryptjs');
 class User extends Person {
 
   static hashPassword(value){
-    return new Promise((resolve, reject) => {
-      bcrypt.hash(value, 10, function(err, hash) {
-        if(err) { reject(err) }
-        else { resolve(hash) }
-      });
-    })
+    return bcrypt.hashSync(value, 10);
   }
 
   constructor(model){
@@ -23,9 +18,10 @@ class User extends Person {
   get password(){ return this.computed.password; }
   set password(value){
     if(User.isString(value) || User.isNumber(value)){
-      User.hashPassword(value)
-        .then(hash => { this.computed.password = hash; })
-        .catch(console.error)
+      this.computed.password = User.hashPassword(value)
+      console.log(`PASSWORD SET:  ${value} => ${this.computed.password}`)
+    }else{
+      console.log(`PASSWORD NOT SET:  '${value}' must be string or number`)
     }
   }
 
