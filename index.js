@@ -9,7 +9,8 @@ class User extends Person {
     super(model);
 
     this.password = model.password;
-    this.verified = model.verified;
+    this.verified = model.verified || false;
+    this.role = model.role || 'user'; //root, admin, user
   }
 
   get password(){ return this.computed.password; }
@@ -31,6 +32,12 @@ class User extends Person {
     }
   }
 
+  get role(){ return this.computed.role; }
+  set role(value){
+    if(User.isString(value)){
+      this.computed.role = value.toLowerCase();
+    }
+  }
 
   //Retuns a user without private
   //variables, like password

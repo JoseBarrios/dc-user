@@ -13,6 +13,17 @@ var key = {};
 key.fullName = 'Jose Barrios';
 key.email = null;
 
+describe('user.role', function() {
+	it('should set user role to user by default', function() {
+    assert.equal(user.role, 'user');
+    user.role = 'admin';
+    assert.equal(user.role, 'admin');
+    user.role = 'root';
+    assert.equal(user.role, 'root');
+	});
+});
+
+
 describe('user.password', function() {
 	it('should hash user password', function() {
     assert.equal(user.password, model.password);
