@@ -9,17 +9,20 @@ model.email = 'jose@barrios.io';
 model.password = 'abc123'
 let user = new User(model);
 
+
 var key = {};
 key.fullName = 'Jose Barrios';
 key.email = null;
 
 describe('user.role', function() {
 	it('should set user role to user by default', function() {
-    assert.equal(user.role, 'user');
+    assert.equal(user.role, 0);
+    user.role = 'user';
+    assert.equal(user.role, 1);
     user.role = 'admin';
-    assert.equal(user.role, 'admin');
+    assert.equal(user.role, 2);
     user.role = 'root';
-    assert.equal(user.role, 'root');
+    assert.equal(user.role, 3);
 	});
 });
 

@@ -10,7 +10,7 @@ class User extends Person {
 
     this.password = model.password;
     this.verified = model.verified || false;
-    this.role = model.role || 'user'; //root, admin, user
+    this.role = model.role; //root, admin, user, public
   }
 
   get password(){ return this.computed.password; }
@@ -35,7 +35,26 @@ class User extends Person {
   get role(){ return this.computed.role; }
   set role(value){
     if(User.isString(value)){
-      this.computed.role = value.toLowerCase();
+      switch(value.toLowerCase()){
+          case 'root':
+            this.computed.role = 3;
+          break;
+
+          case 'admin':
+            this.computed.role = 2;
+          break;
+
+          case 'user':
+            this.computed.role = 1;
+          break;
+
+          default:
+          //Public
+          this.computed.role = 0;
+      }
+    } else {
+      //Public
+      this.computed.role = 0;
     }
   }
 
