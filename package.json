@@ -1,6 +1,6 @@
 {
-  "name": "@josebarrios/user",
-  "version": "0.1.15",
+  "name": "dc-user",
+  "version": "0.1.1",
   "description": "Custom user class",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "mocha": "^3.4.2"
   },
   "dependencies": {
-    "@josebarrios/person": "^1.1.6"
+    "dc-person": "^0.1.1"
   }
 }
