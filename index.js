@@ -1,4 +1,4 @@
-const Person = require('@josebarrios/person');
+const Person = require('dc-person');
 const bcrypt = require('bcryptjs');
 
 class User extends Person {
