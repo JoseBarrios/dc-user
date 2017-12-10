@@ -3,12 +3,11 @@ var assert = require('assert');
 var User = require('../index.js');
 
 var model = {};
-model.givenName = 'jose';
-model.familyName = 'barrios';
+model.givenName = 'Jose';
+model.familyName = 'Barrios';
 model.email = 'jose@barrios.io';
 model.password = 'abc123'
 let user = new User(model);
-
 
 var key = {};
 key.fullName = 'Jose Barrios';
@@ -26,9 +25,8 @@ describe('user.role', function() {
 	});
 });
 
-
 describe('user.password', function() {
-	it('should hash user password', function() {
+	it('should store user password', function() {
     assert.equal(user.password, model.password);
 	});
 });
@@ -36,6 +34,7 @@ describe('user.password', function() {
 describe('user.fullName', function() {
 	it('should return the given and family names in a single string', function() {
 		assert.equal(user.fullName, key.fullName);
+		console.log(user.fullName)
 	});
 });
 
