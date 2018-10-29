@@ -15,12 +15,13 @@ key.email = null;
 
 describe('user.role', function() {
 	it('should set user role to user by default', function() {
+    //Public
     assert.equal(user.role, 0);
-    user.role = 'user';
+    user.role = 'root';
     assert.equal(user.role, 1);
     user.role = 'admin';
     assert.equal(user.role, 2);
-    user.role = 'root';
+    user.role = 'user';
     assert.equal(user.role, 3);
 	});
 });
