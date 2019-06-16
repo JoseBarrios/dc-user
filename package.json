@@ -1,6 +1,6 @@
 {
   "name": "dc-user",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Custom user class",
   "main": "index.js",
   "scripts": {
