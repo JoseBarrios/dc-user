@@ -13,6 +13,31 @@ var key = {};
 key.fullName = 'Jose Barrios';
 key.email = null;
 
+describe('User.role()', function() {
+  it('should return the user code/name', function() {
+
+    assert.equal(User.role('root'), 1);
+    assert.equal(User.role(1), 'root');
+
+    assert.equal(User.role('admin'), 2);
+    assert.equal(User.role(2), 'admin');
+
+    assert.equal(User.role('user'), 3);
+    assert.equal(User.role(3), 'user');
+
+    assert.equal(User.role('wrong'), null);
+    assert.equal(User.role(5), null);
+
+    assert.equal(User.role(null), null);
+    assert.equal(User.role(null), null);
+
+    assert.equal(User.role(), null);
+    assert.equal(User.role(), null);
+
+	});
+});
+
+
 describe('user.role', function() {
 	it('should set user role to user by default', function() {
     //Public
